@@ -11,7 +11,7 @@ const ContentContainer = (props: ContentContainerProps) => {
       w="95%"
       border="2px solid white"
       p="4px"
-      borderRadius="8px"
+      borderRadius="10px"
       mx="auto"
       my="8px"
       minH="90vh"
