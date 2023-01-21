@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import ContentContainer from "@/features/ContentContainer/components";
+import Footer from "@/features/Footer/components";
 
 const theme = extendTheme({
   styles: {
@@ -30,6 +31,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <ContentContainer>
         <Component {...pageProps} />
       </ContentContainer>
+      <Footer />
     </ChakraProvider>
   );
 };

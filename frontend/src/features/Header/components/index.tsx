@@ -1,11 +1,10 @@
-import { Flex, useMediaQuery } from "@chakra-ui/react";
+import { Flex, Show } from "@chakra-ui/react";
 import Image from "next/image";
 import { useState } from "react";
 import HamburgerToggle from "./HamburgerToggle";
 import NavLinks from "./NavLinks";
 
 const Header = () => {
-  const [isDesktop] = useMediaQuery("(min-width: 600px)");
   const [hamburgerIsOpen, setHamburgerOpen] = useState(false);
   return (
     <>
@@ -22,14 +21,16 @@ const Header = () => {
           width="200"
           height="200"
         />
-        {isDesktop ? (
+
+        <Show above="601px">
           <NavLinks isDesktop />
-        ) : (
+        </Show>
+        <Show below="600px">
           <HamburgerToggle
             isOpen={hamburgerIsOpen}
             setOpen={setHamburgerOpen}
           />
-        )}
+        </Show>
       </Flex>
       {hamburgerIsOpen ? <NavLinks isDesktop={false} /> : null}
     </>
