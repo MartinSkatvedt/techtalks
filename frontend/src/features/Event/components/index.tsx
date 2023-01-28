@@ -15,6 +15,7 @@ type EventProps = {
 
 const Event = (props: EventProps) => {
   const { data } = props;
+  console.log(data);
   return (
     <Card maxW="sm" m={8}>
       <CardHeader>
@@ -25,9 +26,7 @@ const Event = (props: EventProps) => {
       <CardBody>{data.description}</CardBody>
       <CardFooter>
         <Link href={data.url} isExternal ml="auto">
-          <Button as="a" colorScheme="teal">
-            Gå til påmelding
-          </Button>
+          <Button colorScheme="teal">Gå til påmelding</Button>
         </Link>
       </CardFooter>
     </Card>

@@ -16,8 +16,8 @@ export default {
     },
     {
       name: 'logo',
-      type: 'string',
-      title: 'Logo (url)',
+      type: 'image',
+      title: 'Logo',
     },
     {
       name: 'url',

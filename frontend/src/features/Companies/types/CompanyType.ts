@@ -2,7 +2,13 @@ export type CompanyType = {
   name: string;
   description: CompanyDescriptionType;
   url: string;
-  logo: string;
+  logo: {
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+    _type: string;
+  };
   _id: string;
 };
 

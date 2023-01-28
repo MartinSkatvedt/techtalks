@@ -13,12 +13,7 @@ const theme = extendTheme({
         height: "100%",
         webkitfontsmoothing: "antialiased",
         mozOsxFontSmoothing: "grayscale",
-        fontFamily: [
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Source Sans Pro",
-          "sans-serif",
-        ],
+        fontFamily: "sans-serif",
         background: "linear-gradient(160deg, #488582 60%, #292929 60.1%);",
       },
     }),
