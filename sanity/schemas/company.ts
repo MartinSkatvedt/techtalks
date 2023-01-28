@@ -10,8 +10,9 @@ export default {
     },
     {
       name: 'description',
-      type: 'string',
       title: 'Description',
+      type: 'array',
+      of: [{type: 'block'}],
     },
     {
       name: 'logo',

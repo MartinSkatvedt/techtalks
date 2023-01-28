@@ -4,6 +4,7 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  Heading,
   Link,
 } from "@chakra-ui/react";
 import { EventType } from "../types/EventType";
@@ -16,7 +17,11 @@ const Event = (props: EventProps) => {
   const { data } = props;
   return (
     <Card maxW="sm" m={8}>
-      <CardHeader>{data.heading}</CardHeader>
+      <CardHeader>
+        <Heading as="h2" size="md">
+          {data.heading}
+        </Heading>
+      </CardHeader>
       <CardBody>{data.description}</CardBody>
       <CardFooter>
         <Link href={data.url} isExternal ml="auto">

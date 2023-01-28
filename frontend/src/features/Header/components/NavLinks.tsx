@@ -16,7 +16,7 @@ const NavLinks = (props: NavLinksProps) => {
       justifyContent="space-evenly"
       alignItems="center"
     >
-      <NavLink href={"/"} name={"Home"} />
+      <NavLink href={"/"} name={"Hjem"} />
       <NavLink href={"/About"} name={"Om Tech Talks"} />
       <NavLink href={"/Program"} name={"Program"} />
       {isDesktop ? null : <Divider my="8px" />}
