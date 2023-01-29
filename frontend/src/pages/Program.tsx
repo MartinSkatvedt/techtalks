@@ -1,4 +1,5 @@
 import Event from "@/features/Event/components";
+import EventDay from "@/features/Event/components/EventDay";
 import { EventType } from "@/features/Event/types/EventType";
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import client from "lib/SanityClient";
@@ -17,10 +18,22 @@ type ProgramProps = {
   events: EventType[];
 };
 
+type GroupType = {
+  [key: number]: EventType[];
+};
 const Program = (props: ProgramProps) => {
   const { events } = props;
-  console.log(events);
-  const eventComponents = events.map((ev) => <Event key={ev._id} data={ev} />);
+
+  const eventsGroupedByDate = events.reduce((group: GroupType, event) => {
+    const eventDate = new Date(event.start_datetime).getDate();
+    group[eventDate] = group[eventDate] ?? [];
+    group[eventDate].push(event);
+    return group;
+  }, {});
+
+  const eventDayComponents = Object.entries(eventsGroupedByDate).map(
+    ([day, events]) => <EventDay key={day} events={events} date={day} />
+  );
   return (
     <>
       <Head>
@@ -44,7 +57,9 @@ const Program = (props: ProgramProps) => {
             Er du ekstern, men vil melde deg på? Trykk her!
           </Flex>
         </Flex>
-        {eventComponents}
+        <Flex justifyContent="space-evenly" mt={8} flexDir={["column", "row"]}>
+          {eventDayComponents}
+        </Flex>
       </main>
     </>
   );

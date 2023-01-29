@@ -19,8 +19,9 @@ export default {
       title: 'Location',
       options: {
         list: [
-          {title: 'Sted 1', value: 'sted_1'},
-          {title: 'Sted 2', value: 'sted_2'},
+          {title: 'TBD', value: 'TBD'},
+          {title: 'Olivia Solsiden', value: 'Olivia Solsiden'},
+          {title: 'Graffi Grill Midtbyen', value: 'Graffi Grill Midtbyen'},
         ],
       },
     },

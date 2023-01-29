@@ -1,4 +1,5 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { InfoIcon, TimeIcon } from "@chakra-ui/icons";
+import { Box, Flex, Heading, Icon, Text } from "@chakra-ui/react";
 import { EventType } from "../types/EventType";
 
 type EventProps = {
@@ -13,7 +14,8 @@ const Event = (props: EventProps) => {
 
   return (
     <Box
-      m={8}
+      my={4}
+      mx="auto"
       boxShadow="4px 0px 10px 5px rgba(255,255,255,0.1)"
       borderWidth="1px 1px 1px 5px"
       borderColor="white white white #488582"
@@ -21,17 +23,22 @@ const Event = (props: EventProps) => {
       w="xs"
       p={4}
     >
-      <Heading as="h3" size="md" mb={2}>
+      <Heading as="h3" size="md">
         {heading}
       </Heading>
-      <Box>
-        {start.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-        {" -> "}
-        {end.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-        <br />
-        {location}
-      </Box>
-      <Box>
+      <Flex justifyContent="space-between" mt={4}>
+        <Flex alignItems="center">
+          <Icon as={TimeIcon} boxSize={4} mr={1} />
+          {start.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+          {" - "}
+          {end.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+        </Flex>
+        <Flex alignItems="center">
+          <Icon as={InfoIcon} boxSize={4} mr={1} />
+          {location}
+        </Flex>
+      </Flex>
+      <Box mt={4}>
         <Text>{description}</Text>
       </Box>
     </Box>
