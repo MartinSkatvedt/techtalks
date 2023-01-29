@@ -4,7 +4,7 @@ import { Box, Flex, Heading } from "@chakra-ui/react";
 import client from "lib/SanityClient";
 import Head from "next/head";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const events = await client.fetch(`*[_type == "event"]`);
   return {
     props: {
