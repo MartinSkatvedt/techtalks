@@ -30,6 +30,11 @@ export default {
       title: 'Event start',
     },
     {
+      name: 'end_datetime',
+      type: 'datetime',
+      title: 'Event end',
+    },
+    {
       name: 'url',
       type: 'url',
       title: 'URL',

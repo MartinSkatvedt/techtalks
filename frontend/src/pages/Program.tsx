@@ -1,6 +1,6 @@
 import Event from "@/features/Event/components";
 import { EventType } from "@/features/Event/types/EventType";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import client from "lib/SanityClient";
 import Head from "next/head";
 
@@ -19,7 +19,7 @@ type ProgramProps = {
 
 const Program = (props: ProgramProps) => {
   const { events } = props;
-
+  console.log(events);
   const eventComponents = events.map((ev) => <Event key={ev._id} data={ev} />);
   return (
     <>
@@ -32,14 +32,18 @@ const Program = (props: ProgramProps) => {
         <Heading as="h1" size="xl" textAlign="center">
           Program
         </Heading>
-        <Box
-          border="1px solid white"
-          w="fit-content"
-          p="4px"
-          borderRadius="8px"
-        >
-          Er du ekstern, men vil melde deg på? Trykk her!
-        </Box>
+        <Flex justifyContent="flex-end" mx="auto" w="90%">
+          <Flex
+            alignItems="center"
+            h="50px"
+            border="1px solid white"
+            w="fit-content"
+            p="8px"
+            borderRadius="8px"
+          >
+            Er du ekstern, men vil melde deg på? Trykk her!
+          </Flex>
+        </Flex>
         {eventComponents}
       </main>
     </>

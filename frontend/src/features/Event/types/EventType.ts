@@ -3,6 +3,7 @@ export type EventType = {
   description: string;
   location: string;
   start_datetime: string;
+  end_datetime: string;
   url: string;
   _id: string;
 };
