@@ -1,5 +1,5 @@
 import { InfoIcon, TimeIcon } from "@chakra-ui/icons";
-import { Box, Flex, Heading, Icon, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Icon, Link, Text } from "@chakra-ui/react";
 import { EventType } from "../types/EventType";
 
 type EventProps = {
@@ -8,7 +8,8 @@ type EventProps = {
 
 const Event = (props: EventProps) => {
   const { data } = props;
-  const { heading, description, start_datetime, end_datetime, location } = data;
+  const { heading, description, start_datetime, end_datetime, location, url } =
+    data;
   const start = new Date(start_datetime);
   const end = new Date(end_datetime);
 
@@ -20,7 +21,7 @@ const Event = (props: EventProps) => {
       borderWidth="1px 1px 1px 5px"
       borderColor="white white white #488582"
       borderRadius="0px 5px 5px 0px"
-      w="xs"
+      w="sm"
       p={4}
     >
       <Heading as="h3" size="md">
@@ -41,6 +42,11 @@ const Event = (props: EventProps) => {
       <Box mt={4}>
         <Text>{description}</Text>
       </Box>
+      <Flex justifyContent="flex-end">
+        <Link href={url} isExternal target="_blank">
+          <Button backgroundColor="#488582">Påmelding</Button>
+        </Link>
+      </Flex>
     </Box>
   );
 };

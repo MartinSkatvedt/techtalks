@@ -17,13 +17,6 @@ export default {
       name: 'location',
       type: 'string',
       title: 'Location',
-      options: {
-        list: [
-          {title: 'TBD', value: 'TBD'},
-          {title: 'Olivia Solsiden', value: 'Olivia Solsiden'},
-          {title: 'Graffi Grill Midtbyen', value: 'Graffi Grill Midtbyen'},
-        ],
-      },
     },
     {
       name: 'start_datetime',

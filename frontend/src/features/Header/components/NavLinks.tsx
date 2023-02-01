@@ -17,7 +17,7 @@ const NavLinks = (props: NavLinksProps) => {
       alignItems="center"
     >
       <NavLink href={"/"} name={"Hjem"} />
-      <NavLink href={"/About"} name={"Om Tech Talks"} />
+      <NavLink href={"/Companies"} name={"Bedrifter"} />
       <NavLink href={"/Program"} name={"Program"} />
       {isDesktop ? null : <Divider my="8px" />}
     </Flex>

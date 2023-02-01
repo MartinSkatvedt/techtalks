@@ -9,8 +9,12 @@ type EventDayProps = {
 
 const EventDay = (props: EventDayProps) => {
   const { date, events } = props;
-  events.sort((ev) => Date.parse(ev.start_datetime));
-  const eventComponents = events.map((ev) => <Event key={ev._id} data={ev} />);
+
+  const eventComponents = events
+    .sort((a, b) =>
+      Date.parse(a.start_datetime) > Date.parse(b.start_datetime) ? 1 : -1
+    )
+    .map((ev) => <Event key={ev._id} data={ev} />);
   return (
     <Box>
       <Heading as="h2" textAlign="center">

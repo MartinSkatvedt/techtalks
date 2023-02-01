@@ -45,18 +45,7 @@ const Program = (props: ProgramProps) => {
         <Heading as="h1" size="xl" textAlign="center">
           Program
         </Heading>
-        <Flex justifyContent="flex-end" mx="auto" w="90%">
-          <Flex
-            alignItems="center"
-            h="50px"
-            border="1px solid white"
-            w="fit-content"
-            p="8px"
-            borderRadius="8px"
-          >
-            Er du ekstern, men vil melde deg på? Trykk her!
-          </Flex>
-        </Flex>
+        <Flex justifyContent="flex-end" mx="auto" w="90%"></Flex>
         <Flex justifyContent="space-evenly" mt={8} flexDir={["column", "row"]}>
           {eventDayComponents}
         </Flex>

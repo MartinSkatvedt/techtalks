@@ -1,6 +1,6 @@
 import Company from "@/features/Companies/components";
 import { CompanyType } from "@/features/Companies/types/CompanyType";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import client from "lib/SanityClient";
 import Head from "next/head";
 
@@ -26,16 +26,15 @@ const About = (props: AboutProps) => {
   return (
     <>
       <Head>
-        <title>About</title>
+        <title>Companies</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <Heading as="h1" size="xl" textAlign="center">
-          Samarbeidspartnere
+          Bedrifter
         </Heading>
-
-        {companyComponents}
+        <Flex>{companyComponents}</Flex>
       </main>
     </>
   );
