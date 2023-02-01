@@ -34,7 +34,7 @@ const About = (props: AboutProps) => {
         <Heading as="h1" size="xl" textAlign="center">
           Bedrifter
         </Heading>
-        <Flex>{companyComponents}</Flex>
+        <Flex wrap="wrap">{companyComponents}</Flex>
       </main>
     </>
   );

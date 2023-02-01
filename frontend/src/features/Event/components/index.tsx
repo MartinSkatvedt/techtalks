@@ -42,7 +42,7 @@ const Event = (props: EventProps) => {
       <Box mt={4}>
         <Text>{description}</Text>
       </Box>
-      <Flex justifyContent="flex-end">
+      <Flex justifyContent="flex-end" mt={4}>
         <Link href={url} isExternal target="_blank">
           <Button backgroundColor="#488582">Påmelding</Button>
         </Link>

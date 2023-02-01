@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Box, Divider, Heading, Text } from "@chakra-ui/react";
 import Head from "next/head";
 
 export default function Home() {
@@ -14,6 +14,10 @@ export default function Home() {
         <Heading as="h1" size="xl" textAlign="center">
           Tech talks 2023
         </Heading>
+        <Divider w="sm" mx="auto" my={4} />
+        <Box textAlign="center">
+          <Text>Lorem Ipsum</Text>
+        </Box>
       </main>
     </>
   );

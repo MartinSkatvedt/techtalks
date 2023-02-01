@@ -1,4 +1,11 @@
-import { Card, CardBody, CardHeader, Heading, Image } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Flex,
+  Heading,
+  Image,
+} from "@chakra-ui/react";
 import { CompanyType } from "../types/CompanyType";
 import Description from "./Description";
 
@@ -15,18 +22,21 @@ const Company = (props: CompanyProps) => {
   };
 
   return (
-    <Card maxW="sm" m={8}>
+    <Card w="lg" m={8} mx="auto">
       <CardHeader>
-        <Heading as="h2" size="lg" textAlign="center">
-          {data.name}
-        </Heading>
+        <Flex justifyContent="center" my={4}>
+          <Image
+            w="sm"
+            src={buildLogoUrl(data.logo.asset._ref)}
+            alt={`${data.name} logo`}
+          />
+        </Flex>
       </CardHeader>
+
+      <Heading as="h2" size="lg" textAlign="center">
+        {data.name}
+      </Heading>
       <CardBody>
-        <Image
-          src={buildLogoUrl(data.logo.asset._ref)}
-          alt={`${data.name} logo`}
-          m="4px"
-        />
         <Description description={data.description} />
       </CardBody>
     </Card>
