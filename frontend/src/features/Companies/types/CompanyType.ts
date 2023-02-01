@@ -1,6 +1,6 @@
 export type CompanyType = {
   name: string;
-  description: CompanyDescriptionType;
+  description: CMSBlockType;
   url: string;
   logo: {
     asset: {
@@ -12,7 +12,7 @@ export type CompanyType = {
   _id: string;
 };
 
-export type CompanyDescriptionType = {
+export type CMSBlockType = {
   [key: number]: {
     children: {
       text: string;

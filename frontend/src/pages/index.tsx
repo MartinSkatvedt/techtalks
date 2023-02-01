@@ -1,7 +1,24 @@
-import { Box, Divider, Heading, Text } from "@chakra-ui/react";
+import Description from "@/features/Companies/components/Description";
+import HomePageType from "@/features/HomePage/types/HomePageType";
+import { Box, Divider, Heading } from "@chakra-ui/react";
+import client from "lib/SanityClient";
 import Head from "next/head";
 
-export default function Home() {
+export async function getStaticProps() {
+  const pageContent = await client.fetch(`*[_type == "frontpage"][0]`);
+  return {
+    props: {
+      pageContent,
+    },
+  };
+}
+
+type HomeProps = {
+  pageContent: HomePageType;
+};
+
+export default function Home(props: HomeProps) {
+  const { pageContent } = props;
   return (
     <>
       <Head>
@@ -12,11 +29,11 @@ export default function Home() {
       </Head>
       <main>
         <Heading as="h1" size="xl" textAlign="center">
-          Tech talks 2023
+          {pageContent.heading}
         </Heading>
         <Divider w="sm" mx="auto" my={4} />
-        <Box textAlign="center">
-          <Text>Lorem Ipsum</Text>
+        <Box textAlign="center" w={["xs", "xl"]} mx="auto">
+          <Description description={pageContent.description} />
         </Box>
       </main>
     </>

@@ -1,3 +1,5 @@
 import company from './company'
 import event from './event'
-export const schemaTypes = [event, company]
+import frontpage from './frontpage'
+
+export const schemaTypes = [event, company, frontpage]

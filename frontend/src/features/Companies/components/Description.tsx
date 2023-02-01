@@ -1,7 +1,8 @@
-import { CompanyDescriptionType } from "../types/CompanyType";
+import { CMSBlockType } from "../types/CompanyType";
 import { Text } from "@chakra-ui/react";
+
 type DescriptionType = {
-  description: CompanyDescriptionType;
+  description: CMSBlockType;
 };
 
 const Description = (props: DescriptionType) => {
